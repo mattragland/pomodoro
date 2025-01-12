@@ -1,0 +1,242 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #eff0f3;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 400px;
+    width: 90%;
+}
+
+.container h1 {
+    color: #0d0d0d;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.timer {
+    font-size: 5rem;
+    margin: 2rem 0;
+    font-weight: 700;
+    color: #d9376e;
+    font-variant-numeric: tabular-nums;
+}
+
+.controls button {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.controls button:hover {
+    transform: translateY(-2px);
+}
+
+.btn-start {
+    background-color: #ff8e3c;
+}
+
+.btn-start:hover {
+    background-color: #f17d2d;
+}
+
+.btn-pause {
+    background-color: #2a2a2a;
+}
+
+.btn-pause:hover {
+    background-color: #3a3a3a;
+}
+
+.btn-reset {
+    background-color: #d9376e;
+}
+
+.btn-reset:hover {
+    background-color: #c42a5f;
+}
+
+.mode {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    color: #2a2a2a;
+    font-weight: 500;
+}
+
+.mode-toggle-btn {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    margin-top: 0;
+}
+
+.mode-toggle-btn:hover {
+    background-color: #3a3a3a;
+    color: white;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #0d0d0d;
+}
+
+.dark-mode .container {
+    background-color: #2a2a2a;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .container h1 {
+    color: #eff0f3;
+}
+
+.dark-mode .timer {
+    color: #ff8e3c;
+}
+
+.dark-mode .mode {
+    color: #eff0f3;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: rgba(42, 42, 42, 0.1);
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-toggle img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover img {
+    transform: scale(1.1);
+}
+
+/* Show/hide appropriate content based on theme */
+.dark-text, .dark-icon {
+    display: block;
+}
+
+.light-text, .light-icon {
+    display: none;
+}
+
+.dark-mode .dark-text,
+.dark-mode .dark-icon {
+    display: none;
+}
+
+.dark-mode .light-text,
+.dark-mode .light-icon {
+    display: block;
+}
+
+/* Text styles */
+.theme-toggle span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2a2a2a;
+}
+
+.dark-mode .theme-toggle span {
+    color: #eff0f3;
+}
+
+.dark-mode .theme-toggle {
+    background-color: rgba(239, 240, 243, 0.1);
+}
+
+.dark-mode .btn-pause {
+    background-color: #3a3a3a;
+}
+
+.dark-mode .btn-pause:hover {
+    background-color: #4a4a4a;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.controls button {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Add dark mode variant if needed */
+.dark-mode .mode-toggle-btn {
+    background-color: #3a3a3a;
+}
+
+.dark-mode .mode-toggle-btn:hover {
+    background-color: #4a4a4a;
+}
+
+.task-input {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.task-input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+}
+
+.task-input input:focus {
+    outline: none;
+    border-color: #666;
+}
+
+/* For dark mode compatibility */
+[data-theme="dark"] .task-input input {
+    background-color: #2c2c2c;
+    border-color: #444;
+    color: #fff;
+} 

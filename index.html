@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        <div class="task-input">
+            <input type="text" id="task-description" placeholder="What are you working on?">
+        </div>
+        <div class="timer">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+        </div>
+        <div class="controls">
+            <div class="button-row">
+                <button id="start" class="btn-start">Start</button>
+                <button id="reset" class="btn-reset">Reset</button>
+            </div>
+            <div class="button-row">
+                <button id="pause" class="btn-pause">Pause</button>
+                <button id="mode-toggle" class="mode-toggle-btn">Rest</button>
+            </div>
+        </div>
+        <div class="mode">
+            <span id="mode-text">Stay Focused</span>
+        </div>
+    </div>
+    <button class="theme-toggle" onclick="toggleDarkMode()">
+        <div class="theme-toggle-content">
+            <img src="Matt-Grumpy-Icon-Pomo.PNG" alt="Switch to Dark Mode" class="dark-icon">
+            <span class="dark-text">Switch to Dark Mode</span>
+        </div>
+        <div class="theme-toggle-content">
+            <img src="Matt-Happy-Icon-Pomo.PNG" alt="Switch to Light Mode" class="light-icon">
+            <span class="light-text">Switch to Light Mode</span>
+        </div>
+    </button>
+    <script src="script.js"></script>
+</body>
+</html> 
