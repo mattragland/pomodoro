@@ -10,6 +10,7 @@ const resetButton = document.getElementById('reset');
 const modeText = document.getElementById('mode-text');
 const modeToggleButton = document.getElementById('mode-toggle');
 const themeToggleBtn = document.querySelector('.theme-toggle');
+const timerSound = document.getElementById('timer-sound');
 
 const WORK_TIME = 25 * 60; // 25 minutes in seconds
 const BREAK_TIME = 5 * 60; // 5 minutes in seconds
@@ -44,6 +45,7 @@ function startTimer() {
             updateDisplay();
             
             if (timeLeft === 0) {
+                playTimerSound();
                 clearInterval(timerId);
                 timerId = null;
                 switchMode();
@@ -89,4 +91,9 @@ resetTimer();
 
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
+}
+
+function playTimerSound() {
+    timerSound.currentTime = 0; // Reset sound to start
+    timerSound.play();
 }
