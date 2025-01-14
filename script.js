@@ -11,6 +11,7 @@ const modeText = document.getElementById('mode-text');
 const modeToggleButton = document.getElementById('mode-toggle');
 const themeToggleBtn = document.querySelector('.theme-toggle');
 const timerSound = document.getElementById('timer-sound');
+const taskInput = document.getElementById('task-description');
 
 const WORK_TIME = 25 * 60; // 25 minutes in seconds
 const BREAK_TIME = 5 * 60; // 5 minutes in seconds
@@ -30,7 +31,6 @@ function updateDisplay() {
 function switchMode() {
     isWorkTime = !isWorkTime;
     timeLeft = isWorkTime ? WORK_TIME : BREAK_TIME;
-    modeText.textContent = isWorkTime ? 'You Said This Was Important' : 'Break Time';
     modeToggleButton.textContent = isWorkTime ? 'Switch to Break' : 'Switch to Work';
     updateDisplay();
 }
@@ -40,6 +40,7 @@ function startTimer() {
         if (timeLeft === undefined) {
             timeLeft = WORK_TIME;
         }
+        taskInput.disabled = true;
         timerId = setInterval(() => {
             timeLeft--;
             updateDisplay();
@@ -67,11 +68,11 @@ function resetTimer() {
     timeLeft = WORK_TIME;
     modeText.textContent = 'Stay Focused';
     modeToggleButton.textContent = 'Switch to Break';
+    taskInput.disabled = false;
     updateDisplay();
 }
 
 startButton.addEventListener('click', function() {
-    const taskInput = document.getElementById('task-description');
     if (!taskInput.value.trim()) {
         alert('Please enter a task before starting the timer');
         return;
